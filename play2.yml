@@ -1,0 +1,24 @@
+-
+  name: pb on use case of vars concept
+  hosts: ops
+  vars:
+    a: 10
+    b: 20
+  tasks:
+      - name: code to create directory of india
+        file:
+          path: /opt/chennai
+          state: directory
+
+      - name: code to create the file usa.txt at /opt/india
+        file:
+          path: /opt/delhi/mum.sh
+          state: touch
+
+      - name: code to write put the vars values into file
+        lineinfile:
+          path: /opt/delhi/mum.sh
+          state: present
+          line: #!/bin/bash
+          line: echo " The value of a is {{a}} and value of b is {{b}} "
+

@@ -1,0 +1,20 @@
+---
+- name: pb on use case of lineinfile module
+  hosts: ops
+  tasks:
+    - name: code to create directory of india
+      file:
+        path: /opt/india
+        state: directory
+
+    - name: code to create the file usa.txt at /opt/india
+      file:
+        path: /opt/india/usa.txt
+        state: touch
+
+    - name: code to write hello WORLD
+      lineinfile:
+        path: /opt/india/usa.txt
+        state: present
+        line: 'HELLO WORLD'
+

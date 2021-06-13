@@ -1,0 +1,12 @@
+---
+- name: pb on file-module
+  hosts: all
+  tasks:
+    - name: create a file using file-module
+      file:
+        path: /opt/notes.txt
+        state: touch
+
+    - copy:
+       content: "HELLO WORLD"
+       dest: "/opt/notes.txt"

@@ -1,0 +1,8 @@
+---
+- name: new file created
+  hosts: ops
+  tasks:
+    - name: create a file usind module
+      file:
+        path: /opt/book.txt
+        state: touch
