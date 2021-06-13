@@ -1,0 +1,14 @@
+---
+- name: pb on use case of loops
+  hosts: ops
+  tasks:
+    - name: below code for yum installation
+      yum:
+        name: "{{ item }}"
+        state: present
+      with_items:
+        - git
+        - docker
+        - net-tools
+        - finger
+        - httpd
